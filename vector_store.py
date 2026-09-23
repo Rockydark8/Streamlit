@@ -6,7 +6,7 @@ from models import HistoricalDefect
 
 class KnowledgeBase:
     def __init__(self):
-        self.client = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
+        self.client = chromadb.EphemeralClient()
         self.embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
             model_name=EMBEDDING_MODEL_NAME
         )
